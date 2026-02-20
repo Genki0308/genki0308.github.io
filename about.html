@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="サイトの概要文が入ります。">
+  <meta name="format-detection" content="telephone=no, address=no, email=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Genki Koga</title>
+  <link rel="shortcut icon" href="img/aicon.webp">
+  <link rel="stylesheet" href="css/destyle.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<script src="script.js"></script>
+
+<body>
+  <header>
+    <a href="index.html" class="logo">Genki Koga</a>
+    <nav>
+      <ul class="nav-menu">
+        <li>
+          <a href="about.html">ABOUT</a>
+        </li>
+        <li>
+          <a href="work.html">WORK</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="about-container">
+    <div class="about_title1">
+      <h1>PROFILE</h1>
+      <div class="name">
+        <div class="name-text">
+          <h2>GENKI KOGA / 古賀 元気</h2>
+          <p>福岡デザイン専門学校でWebデザイン・コーディング・アート制作を中心に学んでいます。
+            <br>休日はショッピングモールや公園を歩いたり、音楽や映像を楽しんで過ごしています。
+            <br>日常の中で感じたことや心が動いた瞬間を大切にしています。
+          </p>
+        </div>
+        <img src="img/profile.webp" alt="プロフィールイラスト">
+      </div>
+    </div>
+
+    <div class="about_title2">
+      <h1>SKILL</h1>
+      <div class="skill-container">
+        <div class="skill-text">
+          <div class="skill-item" data-index="1">
+            <p>
+              <strong>Figma</strong>
+              <br>Webサイトの構成設計・UIデザイン / ビジュアルのブラッシュアップ</p>
+          </div>
+          <div class="skill-item" data-index="2">
+            <p>
+              <strong>Photoshop</strong>
+              <br>色調補正 / 写真や素材の切り抜き・調整</p>
+          </div>
+          <div class="skill-item" data-index="3">
+            <p>
+              <strong>Illustrator</strong>
+              <br>簡単な図解・レイアウト / テキストを含む資料作成</p>
+          </div>
+          <div class="skill-item" data-index="4">
+            <p>
+              <strong>Premiere Pro</strong>
+              <br>基本的なカット編集</p>
+          </div>
+          <div class="skill-item" data-index="5">
+            <p>
+              <strong>Visual Studio Code</strong>
+              <br>HTML / CSS / JS によるWebページの基礎的なコーディング</p>
+          </div>
+        </div>
+
+        <div class="skill-image">
+          <img src="img/skill.webp" alt="">
+        </div>
+      </div>
+    </div>
+
+    <div class="about_title3">
+      <p class="fade-item" data-index="0">アートでは自分の内面を掘り下げ、デザインでは相手との関係性を整える。
+        <br>その違いを意識しながら、常に制作に取り組んでいます。
+      </p>
+    </div>
+
+    <script>
+  window.addEventListener("load", () => {
+            const items = document.querySelectorAll(".skill-item, .fade-item");
+        
+            const observer = new IntersectionObserver((entries, observer) => {
+              entries.forEach(entry => {
+                if (entry.isIntersecting) {
+               
+                  const index = parseInt(entry.target.dataset.index, 10) || 0;
+                  setTimeout(() => {
+                    entry.target.classList.add("animate");
+                  }, index * 150);
+                  observer.unobserve(entry.target);
+                }
+              });
+            }, {
+              threshold: 0.01 
+            });
+        
+            items.forEach(item => observer.observe(item));
+          });
+    </script>
+  </div>
+  
+  <footer>
+    <p>Contact: genki0308800@gmail.com / Designed in Figma / HTML, CSS, JavaScript
+      <br>© 2025 genki koga All Rights Reserved</p>
+  </footer>
+</body>
+
+</html>
