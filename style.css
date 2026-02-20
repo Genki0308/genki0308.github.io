@@ -1,0 +1,1467 @@
+@charset "utf-8";
+
+/*　===　フォント　===　*/
+
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+:root {
+  --ft_text: "Michroma", sans-serif;
+  --ft_en: "", sans-serif;
+}
+
+/*　===　ボディ　===　*/
+
+body {
+  font-family: var(--ft_text);
+  font-feature-settings: 'palt'1;
+  color: #333333;
+  background-color: #f3f3f3;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/*　===　ヘッダー　===　*/
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header {
+  font-family: var(--ft_text);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#home {
+  height: auto;
+}
+
+.logo {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ＝＝＝　ナビメニュー　＝＝＝ */
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 50px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+}
+
+.nav-menu a {
+  font-size: 0.7rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-menu a:hover {
+  color: #0070f3;
+}
+
+/* ＝＝＝　トップページ　＝＝＝ */
+
+main {
+  position: relative;
+  height: 95vh;
+  overflow: hidden;
+}
+
+/* ＝＝＝　スライダー　＝＝＝ */
+
+.bg-slider {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.top-slider { top: 100px; }
+.bottom-slider { bottom: 100px; }
+
+.bg-track {
+  display: flex;
+  font-size: 0; 
+  align-items: center;
+}
+
+.bg-track img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin-right: 10px;
+  display: block;
+  opacity: 0.63;
+}
+
+.top-slider .bg-track {
+  animation: slideTop 20s linear infinite;
+}
+
+@keyframes slideTop {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-310px * 5)); }
+}
+
+.bottom-slider .bg-track {
+  animation: slideBottom 25s linear infinite reverse;
+}
+
+@keyframes slideBottom {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-310px * 7)); }
+}
+
+/* ＝＝＝　トップロゴ　＝＝＝ */
+
+.hero {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 300;
+  color: #333;
+  opacity: 0;
+  animation: fadeUp 1.2s ease-out forwards;
+  font-family: var(--ft_text);
+  letter-spacing: 0.10em;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 14px;
+  font-weight: 350;
+  color: #333;
+  margin-top: 12px;
+  opacity: 0;
+  animation: fadeUp 1.2s ease-out forwards 0.3s;
+}
+
+.line {
+  width: 100%;
+  max-width: 600px;
+  height: 3px;
+  background: rgb(51, 51, 51);
+  margin: 40px auto;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards 0.6s;
+}
+
+/* ＝＝＝　テキストアニメーション　＝＝＝ */
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ＝＝＝　トップアニメーション　＝＝＝ */
+
+@media (max-height: 900px) {
+  .top-slider { top: 80px; }
+  .bottom-slider { bottom: 80px; }
+}
+
+@media (max-height: 800px) {
+  .top-slider { top: 60px; }
+  .bottom-slider { bottom: 60px; }
+}
+
+@media (max-height: 700px) {
+  .top-slider { top: 40px; }
+  .bottom-slider { bottom: 40px; }
+}
+
+@media (max-height: 600px) {
+  .top-slider { top: 30px; }
+  .bottom-slider { bottom: 30px; }
+}
+
+/* ＝＝＝　トップタイトル　＝＝＝ */
+
+.top_title h1 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 150;
+}
+
+.top_title p {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.top_title {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top_title {
+  max-width: 1172px;
+  text-align: center;
+}
+
+.top_title h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/*　＝＝＝　コンテイナー　＝＝＝　*/
+
+.container {
+  max-width: 1000px;
+  height: calc(100vh - 250.49px);
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/*　＝＝＝　アバウトコンテイナー　＝＝＝　*/
+
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* ＝＝＝　アバウトタイトル　＝＝＝　*/
+
+.about_title1 {
+  margin-top: 30px;
+}
+
+.about_title1 h1 {
+  margin-top: 200px;
+  font-size: 32px;
+  font-family: var(--ft_text);
+}
+
+.about_title1 p {
+  font-weight: 200;
+  margin-top: 15px;
+  line-height: 1.8;
+}
+
+.about_title2 {
+  max-width: 1172px;
+  margin: 0 auto;
+}
+
+.about_title2 h1 {
+  font-size: 32px;
+  margin-top: 150px;
+  font-family: var(--ft_text);
+}
+
+.about_title2 p {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.about_title3 {
+  max-width: 1172px;
+  margin-top: 100px;
+}
+
+.about_title3 {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-left: 250px;
+  margin-right: 250px;
+  text-align: center;
+}
+
+.about_title3 p {
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.8;
+}
+
+.about_title3 p {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+/*　＝＝＝　プロフィール　＝＝＝　*/
+
+.name-text {
+  flex: 1;
+  text-align: left;
+  width: 580px;
+  margin-top: 50px;
+}
+
+.name-text h2 {
+  font-size: 14px;
+  font-weight: 355;
+}
+
+.name-text p {
+  font-size: 14px;
+}
+
+.name img {
+  width: 400px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  transform-origin: center bottom;
+}
+
+.name img {
+  opacity: 0;               
+  transform: translateY(-50px);
+  animation: fadeInDown 1.5s ease-out forwards;
+  animation-delay: 0.5s; 
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);   
+  }
+}
+
+/*　＝＝＝　スキル　＝＝＝　*/
+
+.skill-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.skill-text {
+  flex: 1;
+}
+
+.skill-item {
+  line-height: 1.6;
+}
+
+.skill-item strong {
+  font-size: 16px;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-top: 50px;
+  font-weight: 450;
+}
+
+.skill-item br {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 14px;
+}
+
+.skill-image img {
+  width: 380px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-top: 120px;
+  transform-origin: 50% 60%;
+  animation: naturalSpin 7.5s ease-in-out infinite;
+}
+
+@keyframes naturalSpin {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(2.5deg); }
+  45%  { transform: rotate(-3deg); }
+  70%  { transform: rotate(1.5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* ＝＝＝　モットーテキスト　＝＝＝　 */
+
+.motto-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  max-width: 700px;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0;
+}
+
+/* ＝＝＝　アバウトアニメーション　＝＝＝　 */
+
+@keyframes floatAndSway {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateY(-30px) rotate(8deg);
+  }
+
+  50% {
+    transform: translateY(-40px) rotate(0deg);
+  }
+
+  75% {
+    transform: translateY(-30px) rotate(-8deg);
+  }
+}
+
+@keyframes cuteFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    animation-timing-function: ease-in-out;
+  }
+
+  20% {
+    transform: translateY(-25px) rotate(4deg) scale(1.05);
+    animation-timing-function: ease-in-out;
+  }
+
+  40% {
+    transform: translateY(-35px) rotate(0deg) scale(1);
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    transform: translateY(-25px) rotate(-4deg) scale(1.05);
+    animation-timing-function: ease-in-out;
+  }
+
+  80% {
+    transform: translateY(-15px) rotate(2deg) scale(1.02);
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes wobble {
+
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+
+  25% {
+    transform: rotate(2deg) translateY(-3px);
+  }
+
+  50% {
+    transform: rotate(-2deg) translateY(3px);
+  }
+
+  75% {
+    transform: rotate(1deg) translateY(-2px);
+  }
+}
+
+.motto-text animate {
+  margin-top: 50px;
+}
+
+.motto-text.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motto-text:nth-of-type(1).animate {
+  transition-delay: 0.1s;
+}
+
+.motto-text:nth-of-type(2).animate {
+  transition-delay: 0.2s;
+}
+
+.motto-text:nth-of-type(3).animate {
+  transition-delay: 0.3s;
+}
+
+.skill-item,
+.fade-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.fade-item{
+  margin-top: 100px;
+}
+
+.skill-item.animate,
+.fade-item.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*　＝＝＝　ワークセクション　＝＝＝　*/
+
+.work-section {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+/*　＝＝＝　ワークタイトル　＝＝＝　*/
+
+.work-section h1 {
+  margin-top: 80px;
+  font-size: 36px;
+  font-weight: 355;
+  font-family: var(--ft_text);
+}
+
+.work-section h2 {
+  margin-top: 80px;
+  font-family: var(--ft_text);
+  font-weight: 200;
+}
+
+.section-title {
+  font-size: 15px;
+  font-weight: 200;
+}
+
+.work_title1 {
+  font-size: 48px;
+  margin-top: 93px;
+}
+
+.work_title1 p {
+  margin-top: 173px;
+  font-size: 16px;
+}
+
+/* ＝＝＝　画像,リスト　＝＝＝　*/
+
+.image-links {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.image-links img {
+  width: 100%;
+}
+
+.image-links a:hover img {
+  transform: scale(1.03);
+}
+
+.work-item {
+  text-align: left;
+}
+
+.work-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+  object-fit: cover;
+  margin-top: 50px;
+  width: 300px;
+  height: 300px;
+}
+
+.work-item p {
+  margin-top: 10px;
+}
+
+.name {
+  width: 100%;
+  display: flex;
+}
+
+.yoga {
+  font-size: 48px;
+  font-weight: 200;
+}
+
+.ohori {
+  font-weight: 200;
+}
+
+/*　＝＝＝　ホバーアニメーション　＝＝＝　*/
+
+.work-item a:hover img {
+  transition: transform 0.3s;
+}
+
+.work-item a:hover img {
+  transform: scale(1.03);
+}
+
+.work-item-web1 a:hover img,
+.work-item-web2 a:hover img {
+  transform: scale(1.03);
+  transition: transform 0.3s;
+}
+
+/* ＝＝＝　アートセクション　＝＝＝　*/
+
+.art_section {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 0.5rem 2rem 4rem;
+  min-height: 680px;
+}
+
+.art_section {
+  padding: 2rem 2rem 4rem;
+}
+
+.wrapper {
+  min-height: 20vh;
+}
+
+/* ＝＝＝　アート画像　＝＝＝ */
+
+.image-wrapper img {
+  display: block;
+  max-width: 455px;
+  margin-top: 25px;
+}
+
+/* ＝＝＝　映像　＝＝＝　*/
+
+video {
+  width: 100%;
+}
+
+/* ＝＝＝　紹介テキスト　＝＝＝ */
+
+.text-wrapper {
+  flex: 1;
+  min-width: 300px;
+  font-weight: 200;
+  margin-top: 25px;
+  margin-left: 50px;
+}
+
+.text-wrapper h1 {
+  font-size: 24px;
+  font-weight: 355;
+}
+
+.text-wrapper h2 {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.text-wrapper p {
+  max-width: 550px;
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 30px;
+}
+
+/*　＝＝＝　キャプション　＝＝＝　*/
+
+.caption {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.caption a {
+  font-size: 14px;
+  font-weight: 350;
+}
+
+.caption2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.caption2 a {
+  font-size: 14px;
+  font-weight: 350;
+}
+
+/*　＝＝＝　ブックカバーセクション　＝＝＝ */
+
+.project-detail {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.project-detail_title h1 {
+  font-size: 24px;
+  margin-top: 50px;
+}
+
+.project-detail h2 {
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.description {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.description p {
+  max-width: 100%;
+  margin-top: 35px;
+}
+
+.description p {
+  width: 930px;
+  line-height: 1.8;
+}
+
+/* ＝＝＝ ブックカバー制作期間 === */
+
+.time-bookcover h1 {
+  margin-top: 30px;
+  font-weight: 355;
+  font-size: 16px;
+}
+
+.time-bookcover p {
+  margin-top: 15px;
+  font-weight: 200;
+  font-size: 14px;
+}
+
+.time-info {
+  margin-bottom: 15px;
+}
+
+/* === ブックカバー紹介画像 === */
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.image-grid img {
+  display: block;
+  max-width: 100%;
+  width: 450px;
+  height: 450px;
+}
+
+.image-grid img {
+  margin-top: 20px;
+}
+
+/* === Web画像、リスト === */
+
+.work-item-web1 img {
+  width: 300px;
+  height: 300px;
+  margin-top: 50px;
+  text-align: left;
+  object-fit: cover;
+}
+
+.work-item-web2 img {
+  width: 300px;
+  height: 300px;
+  margin-top: 50px;
+  text-align: left;
+}
+
+.ohori-pc {
+  margin-top: 20px;
+  width: 1172px;
+  height: 871px;
+}
+
+.ohori-links {
+  padding-left: 0;
+}
+
+.ohori-links p {
+  margin-top: 15px;
+  font-weight: 355;
+}
+
+.ohori-phone {
+  width: 375px;
+  height: 474px;
+}
+
+.yoga-pc {
+  margin-top: 20px;
+  width: 1172px;
+  height: 833px;
+}
+
+.image-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.ohori-pc,
+.yoga-pc,
+.ohori-phone {
+  max-width: 100%;
+  height: auto;
+}
+
+/* === 大濠セクション === */
+
+.ohori-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  box-sizing: border-box;
+  font-weight: 200;
+}
+
+/* === 大濠セクションタイトル === */
+
+.ohori h1 {
+  font-size: 24px;
+  margin-top: 50px;
+  margin-bottom: 5px;
+  text-align: left;
+  font-weight: 350;
+}
+
+/* === Web紹介テキスト === */
+
+.ohori-text {
+  font-size: 14px;
+  text-align: left;
+  line-height: 1.8;
+  font-weight: 200;
+}
+
+.ohori-text p {
+  margin-top: 35px;
+  margin-bottom: 0;
+  max-width: 100%;
+}
+
+/* === デザイン、コーディングリンクボタン === */
+
+.btn-link {
+  margin-top: 10px;
+}
+
+.btn-link {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 6px 12px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+/* === Web制作期間 === */
+
+.time h1 {
+  margin-top: 25px;
+  font-weight: 355;
+  font-size: 16px;
+}
+
+.time p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 200;
+  font-size: 14px;
+}
+
+/* === CM映像 === */
+
+.video-container{
+  width: 100%;
+  max-width: 1000px;  
+  aspect-ratio: 16 / 9; 
+}
+
+.fdstext{
+  margin-top: 35px;
+  font-size: 14px;
+  line-height: 1.8;
+  font-weight: 200;
+}
+
+.video-container video{
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+}
+
+.video-container img{
+  height: 450px;
+}
+
+/* === 共通フッター === */
+
+footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #000;
+  text-align: left;
+  font-size: 10px;
+  line-height: 1.8;
+  font-weight: 200;
+  margin-top: 140px;
+}
+
+footer a {
+  color: #000;
+  text-decoration: none;
+}
+
+footer p {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+
+  /* === ヘッダー === */
+
+  header {
+    margin-top: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .nav-menu {
+    gap: 10px;
+    margin-top: 10px;
+    padding: 10px 0;
+  }
+
+  .container {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .hero-subtitle {
+    font-size: 12px;
+    font-weight: 350;
+    color: #333;
+    margin-top: 12px;
+    opacity: 0;
+    animation: fadeUp 1.2s ease-out forwards 0.3s;
+  }
+
+  /* === トップロゴ === */
+
+   .hero-title{
+    font-size: 24px;
+  }
+
+  .hero-subtitle {
+    font-size: 12px;
+    font-weight: 350;
+    color: #333;
+    margin-top: 12px;
+    opacity: 0;
+    animation: fadeUp 1.2s ease-out forwards 0.3s;
+  }
+
+  /* === スライダー === */
+
+  @media (max-height: 900px) {
+  .top-slider { top: 80px; }
+  .bottom-slider { bottom: 80px; }
+  }
+
+  @media (max-height: 800px) {
+  .top-slider { top: 60px; }
+  .bottom-slider { bottom: 60px; }
+  }
+
+  @media (max-height: 700px) {
+  .top-slider { top: 40px; }
+  .bottom-slider { bottom: 40px; }
+  }
+
+  @media (max-height: 600px) {
+  .top-slider { top: 30px; }
+  .bottom-slider { bottom: 30px; }
+  }
+
+  @media (max-width: 768px) {
+  .bg-slider {
+    height: 180px;
+  }
+
+  .bg-track img {
+    width: 180px;
+    height: 180px;
+    margin-right: 8px;
+  }
+
+  @keyframes slideTop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-188px * 5)); }
+  }
+
+  @keyframes slideBottom {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-188px * 7)); }
+  }
+  }
+
+  /* === トップタイトル === */
+
+  .top_title h1 {
+    font-size: 10px;
+  }
+
+  .top_title p {
+    font-size: 14px;
+  }
+
+  /* === アバウトタイトル === */
+
+  .about_title1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about_title1 p,
+  .about_title2 p,
+  .about_title3 p {
+    font-size: 12px;
+  }
+
+  .about_title1 h1,
+  .about_title2 h1,
+  .about_title3 h1 {
+    margin-top: 200px;
+  }
+
+  .about_title3 {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 12px;
+    margin: 0;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+  }
+
+  /* === アバウトコンテイナー === */
+
+  .about-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* === ワークセクション === */
+
+  .work-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .work-section h2 {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 80px;
+  }
+
+  .work_title1 h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .caption {
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .work-item {
+    max-width: 100%;
+  }
+
+  .work-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .work-item-web1 img {
+    width: 342px;
+    height: 342px;
+  }
+
+  .work-item-web1{
+    width: 100%;
+    height: auto;
+  }
+
+  .work-item-web2{
+    width: 100%;
+    height: auto;
+  }
+
+  .work-section h2 {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 80px;
+  }
+
+  .work_title1 h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .caption {
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .work-section h2 {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 80px;
+  }
+
+  .caption {
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .work-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* === プロフィール === */
+
+  .name {
+    display: block;
+    text-align: left;
+  }
+
+  .name img {
+    margin-top: 20px;
+  }
+
+  .name {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .name-text {
+    order: 1;
+    width: 100%;
+    text-align: left;
+  }
+
+  .name img {
+    width: 200px;
+    height: 150px;
+  }
+
+  /* === スキル === */
+
+  .skill-container {
+    flex-direction: column;
+  }
+
+  .skill-text {
+    order: 1;
+  }
+
+  .skill-image {
+    order: 2;
+  }
+
+  .skill-image img {
+    width: 200px;
+    height: 150px;
+    margin-left: auto;
+    display: block;
+    margin-top: 20px;
+  }
+
+  /* === アバウトアニメーション === */
+
+  @keyframes floatAndSwaySmall {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-15px) rotate(0deg);
+    }
+  }
+
+  .skill-item,
+  .fade-item {
+    opacity: 0 !important;
+    transform: translateY(20px) !important;
+    transition: all 1s ease-out !important;
+  }
+
+  .skill-item.animate,
+  .fade-item.animate {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  @keyframes floatTilt {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(-10px) rotate(3deg);
+    }
+  }
+
+  /* === アートセクション === */
+
+  .art_section {
+    flex-direction: column;
+  }
+
+  /* === 紹介テキスト === */
+
+  .text-wrapper {
+    margin-top: 20px;
+  }
+
+  .text-wrapper p {
+    margin-top: 20px;
+  }
+
+  .text-wrapper h1,
+  .text-wrapper p {
+    text-align: left;
+  }
+
+  .text-wrapper p {
+    font-size: 14px;
+  }
+
+  /* === 大濠セクション === */
+
+  .ohori-container {
+    max-width: 768px;
+    padding: 16px;
+  }
+
+  .ohori h1 {
+    font-size: 24px;
+  }
+
+  .ohori-text {
+    font-size: 14px;
+  }
+
+  /* === Web画像,リスト === */
+
+  .yoga-pc {
+    max-width: 768px;
+    width: 100%;
+    text-align: left;
+  }
+
+  .work-item-web1 img {
+    width: 100%;
+    height: auto;
+  }
+
+  .work-item-web2 img {
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    text-align: left;
+  }
+
+  /* === デザイン,コーディングリンクボタン === */
+
+  .btn-link {
+    margin-bottom: 0;
+  }
+
+  /* === アートセクション === */
+
+  .art_section {
+    padding: 16px;
+  }
+
+  /* === アート画像,リスト === */
+
+  .image-wrapper img {
+    width: 100%;
+  }
+
+  .text-wrapper {
+    margin-left: 0px;
+  }
+
+  .image-wrapper img {
+    margin-top: 0;
+  }
+
+  /* === ブックカバー === */
+
+  .image-grid img {
+    width: 175px;
+    height: auto;
+  }
+
+  .image-grid {
+    gap: 15px;
+    display: flex;
+  }
+
+  .description {
+    margin: 0 auto;
+  }
+
+  .description p {
+    margin-top: 35px;
+    margin-bottom: 25px;
+  }
+
+  .description p {
+    max-width: 100%;
+    white-space: normal;
+    margin-top: 35px;
+  }
+
+  .project-detail {
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .image-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .image-grid img {
+    width: 100%;
+    height: auto;
+  }
+
+  .time-bookcover {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+
+  .project-detail {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* === CM映像 === */
+
+  .video-container{
+  width: 100%;
+  max-width: 1000px;  
+  aspect-ratio: 16 / 9; 
+  }
+
+  .fdstext{
+  margin-top: 35px;
+  font-size: 14px;
+  line-height: 1.8;
+  font-weight: 200;
+  }
+
+  .video-container video{
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  
+  }
+
+  .video-container img{
+  height: 450px;
+  }
+
+  /* === 共通フッター === */
+
+  footer {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 16px;
+  }
+
+  footer p {
+    margin-bottom: 0;
+  }
+}
